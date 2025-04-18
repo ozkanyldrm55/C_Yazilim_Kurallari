@@ -32,10 +32,6 @@ Bu doküman, projede kullanılan C diline özel yazılım geliştirme kuralları
 ## 2. Fonksiyon Tanımlama – `static` Kullanımı
 
 - Aynı dosya içinde kullanılacak yardımcı fonksiyonlar tanımlanırken `static` anahtar kelimesi eklenmelidir.
-- Bu yaklaşım:
-  - Erişim kapsamını kısıtlar,
-  - Kodun modülerliğini artırır,
-  - Sembol çakışmalarını önler.
 
 **Örnek:**
 ```c
@@ -51,26 +47,14 @@ static int calculate_checksum(const uint8_t* data, size_t length);
 - Başlık dosyaları **çift tırnak ("") ile**, sistem kütüphaneleri **açılı parantez (<>) ile** include edilmelidir.
 - Include sırası: kendi header → bağımlı local header'lar → sistem kütüphaneleri.
 
-## 4. Header Guard Kullanımı
-
-- Her `.h` dosyasında **include guard** veya `#pragma once` kullanılmalıdır:
-  ```c
-  #ifndef MY_MODULE_H
-  #define MY_MODULE_H
-
-  // Declarations
-
-  #endif // MY_MODULE_H
-  ```
-
-## 5. Sihirli Sayılar (Magic Numbers) Kullanılmamalı
+## 4. Sihirli Sayılar (Magic Numbers) Kullanılmamalı
 
 - Anlam ifade etmeyen sabit sayılar yerine `#define` veya `const` kullanılarak açıklayıcı isimler verilmelidir.
   ```c
   #define MAX_RETRY_COUNT 3
   ```
 
-## 6. Açıklayıcı Yorumlar ve Fonksiyon Başlıkları
+## 5. Açıklayıcı Yorumlar ve Fonksiyon Başlıkları
 
 - Her fonksiyon, ne yaptığı, parametreleri ve dönüş değeri ile birlikte kısa bir açıklama içermelidir.
   ```c
@@ -81,18 +65,8 @@ static int calculate_checksum(const uint8_t* data, size_t length);
    */
   int read_sensor_data(uint8_t sensorID);
   ```
-
-## 7. `typedef` ile Struct Kullanımı
-
-- `typedef struct` ile tanımlanan yapılar kısa ve anlamlı adlarla kullanılmalıdır.
-  ```c
-  typedef struct {
-      uint8_t id;
-      float temperature;
-  } SensorData_t;
-  ```
-
-## 8. `const` Kullanımı
+  
+## 6. `const` Kullanımı
 
 - Değişmeyecek parametreler ve göstericiler için `const` kullanılmalıdır.
   ```c
@@ -102,15 +76,8 @@ static int calculate_checksum(const uint8_t* data, size_t length);
 
     printf("Max: %d, Current: %d\n", maxSpeed, currentSpeed);
 }
-
   ```
-
-## 9. Boşluk ve Girinti Standartları
-
-- Kod girintisi **4 boşluk** veya proje standardı neyse o şekilde olmalıdır (tab yerine boşluk tercih edilir).
-- Her `if`, `while`, `for`, `else` bloğu süslü parantez `{}` ile yazılmalıdır, tek satır olsa bile.
-
 ---
 
-> 📌 Bu kurallar sürekli olarak güncellenebilir. Lütfen yeni bir kural öneriniz varsa proje yöneticisine bildirin veya bir Pull Request oluşturun.
+> 📌 Bu kurallar sürekli olarak güncellenebilir.
 
