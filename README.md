@@ -77,7 +77,6 @@ static int calculate_checksum(const uint8_t* data, size_t length);
     printf("Max: %d, Current: %d\n", maxSpeed, currentSpeed);
 }
   ```
----
 
 > 📌 Bu kurallar sürekli olarak güncellenebilir.
 
