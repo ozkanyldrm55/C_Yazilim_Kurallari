@@ -62,7 +62,7 @@ static int calculate_checksum(const uint8_t* data, size_t length);
 
 - Değişmeyecek parametreler ve göstericiler için `const` kullanılmalıdır.
   ```c
-  void setSpeed(const int maxSpeed, int currentSpeed) {
+  void set_speed(const int maxSpeed, int currentSpeed) {
     // maxSpeed = 100;  // ❌ Hatalı kullanım: const değişken değiştirilemez
     currentSpeed = 50;  // ✅ Geçerli: currentSpeed değiştirilebilir
 
