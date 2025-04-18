@@ -55,7 +55,7 @@ static int calculate_checksum(const uint8_t* data, size_t length);
    * @param  sensorID: Okunacak sensörün ID'si
    * @retval Okunan veri
    */
-  int read_sensor_data(uint8_t sensorID);
+  int read_sensor_data(uint8_t sensorId);
   ```
   
 ## 5. `const` Kullanımı
