@@ -39,22 +39,14 @@ static void process_data_buffer(void);
 static int calculate_checksum(const uint8_t* data, size_t length);
 ```
 
----
-
-## 3. Dosya Yapısı ve Bölümleme
-
-- Her `.c` dosyasının ilişkili bir `.h` başlık dosyası olmalıdır.
-- Başlık dosyaları **çift tırnak ("") ile**, sistem kütüphaneleri **açılı parantez (<>) ile** include edilmelidir.
-- Include sırası: kendi header → bağımlı local header'lar → sistem kütüphaneleri.
-
-## 4. Sihirli Sayılar (Magic Numbers) Kullanılmamalı
+## 3. Sihirli Sayılar (Magic Numbers) Kullanılmamalı
 
 - Anlam ifade etmeyen sabit sayılar yerine `#define` veya `const` kullanılarak açıklayıcı isimler verilmelidir.
   ```c
   #define MAX_RETRY_COUNT 3
   ```
 
-## 5. Açıklayıcı Yorumlar ve Fonksiyon Başlıkları
+## 4. Açıklayıcı Yorumlar ve Fonksiyon Başlıkları
 
 - Her fonksiyon, ne yaptığı, parametreleri ve dönüş değeri ile birlikte kısa bir açıklama içermelidir.
   ```c
@@ -66,7 +58,7 @@ static int calculate_checksum(const uint8_t* data, size_t length);
   int read_sensor_data(uint8_t sensorID);
   ```
   
-## 6. `const` Kullanımı
+## 5. `const` Kullanımı
 
 - Değişmeyecek parametreler ve göstericiler için `const` kullanılmalıdır.
   ```c
