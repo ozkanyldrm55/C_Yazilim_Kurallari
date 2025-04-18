@@ -96,7 +96,13 @@ static int calculate_checksum(const uint8_t* data, size_t length);
 
 - Değişmeyecek parametreler ve göstericiler için `const` kullanılmalıdır.
   ```c
-  void send_data(const uint8_t* buffer, size_t length);
+  void setSpeed(const int maxSpeed, int currentSpeed) {
+    // maxSpeed = 100;  // ❌ Hatalı kullanım: const değişken değiştirilemez
+    currentSpeed = 50;  // ✅ Geçerli: currentSpeed değiştirilebilir
+
+    printf("Max: %d, Current: %d\n", maxSpeed, currentSpeed);
+}
+
   ```
 
 ## 9. Boşluk ve Girinti Standartları
